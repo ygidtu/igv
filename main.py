@@ -5,7 +5,7 @@ from typing import List, Optional
 import click
 from flask import Flask, send_file, render_template, jsonify, request
 from utils import *
-from flask_cors import CORS
+# from flask_cors import CORS
 
 
 __dir__ = os.path.abspath(os.path.dirname(__file__))
@@ -16,7 +16,7 @@ app = Flask(
     static_url_path="/static",
     template_folder=os.path.join(__dir__, "dist/")
 )
-CORS(app)
+# CORS(app)
 
 app.config["path"] = os.path.join(__dir__, "config.json")
 app.config["data"] = load_config(app.config["path"])
